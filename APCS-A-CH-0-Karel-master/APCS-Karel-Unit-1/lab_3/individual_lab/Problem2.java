@@ -15,7 +15,65 @@ public class Problem2 extends Robot
     }
 
     public void carpetRooms(){
-        
+        move();
+        turnLeft();
+        move();
+        turnLeft();
+        checkWallsAndPutBeeper();
+        repositionRobot();
+        checkWallsAndPutBeeper();
+        turnRight();
+        repositionRobot();
+        checkWallsAndPutBeeper();
+        turnRight();
+        repositionRobot();
+        checkWallsAndPutBeeper();
+        turnLeft();
+        move();
+        turnLeft();
+        move();
+        turnLeft();
+        move();
+        turnLeft();
+        checkWallsAndPutBeeper();
+        turnRight();
+        repositionRobot();
+        checkWallsAndPutBeeper();
+        repositionRobot();
+        checkWallsAndPutBeeper();
+        turnRight();
+        repositionRobot();
+        checkWallsAndPutBeeper();
+        turnLeft();
+        move();
+        turnLeft();
+    }
+
+    public void repositionRobot() {
+        turnRight();
+        move();
+        turnLeft();
+        move();
+        turnLeft();
+        move();
+        turnLeft();
+    }
+    
+    public void turnRight() {
+        turnLeft();
+        turnLeft();
+        turnLeft();
+    }
+    
+    public void checkWallsAndPutBeeper() {
+        if (!frontIsClear()) {
+            turnRight();
+            if (!frontIsClear()) {
+                turnRight();
+                if (!frontIsClear()) {
+                    putBeeper();
+                }
+            }
+        }
     }
 }
-
